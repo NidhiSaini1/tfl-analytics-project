@@ -2,7 +2,7 @@
 
 An end-to-end analytics engineering portfolio project ingesting real-time Transport for London (TfL) tube data, transforming it with dbt, and visualising it in Looker Studio — built entirely on free-tier infrastructure.
 
-> **Target roles:** Senior Data Analyst / Analytics Engineer (UK)
+
 
 ---
 
