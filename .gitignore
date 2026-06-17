@@ -1,0 +1,13 @@
+# Secrets
+.env
+
+# Google service account keys
+service-account*.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# macOS
+.DS_Store
