@@ -1,0 +1,22 @@
+name: PR Check
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+
+jobs:
+  require-notion-ticket:
+    name: Require Notion ticket link
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check PR body for Notion ticket link
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
+        run: |
+          if echo "$PR_BODY" | grep -q "notion.so"; then
+            echo "Notion ticket link found. OK."
+          else
+            echo "ERROR: PR description must include a Notion ticket link (notion.so/...)."
+            echo "Please link the ticket from: https://app.notion.com/p/38211d6f5a708143be28f4fee83bfa6a"
+            exit 1
+          fi
